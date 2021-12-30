@@ -1,21 +1,12 @@
 const express = require('express');
-const ConnectDB = require('./config/db.js');
-
 const app = express();
 
-// Connect Database;
-ConnectDB();
+// Define Routes
 
-// Init Middleware;
+app.use('/api/auth', require('./routes/auth.js'));
+app.use('/api/contacts', require('./routes/contacts.js'));
+app.use('/api/users', require('./routes/users.js'));
 
 const PORT = process.env.PORT || 5000;
 
-app.get('/api/users', (req, res) => {
-  res.send('Have shared the data');
-});
-
-app.post('/api/users/post', (req, res) => {
-  res.send('Thank you for your Response');
-});
-
-app.listen(PORT, () => console.log(`Server Started on Port ${PORT}`));
+app.listen(PORT, () => console.log(`Server Started on the PORT ${PORT}`));
