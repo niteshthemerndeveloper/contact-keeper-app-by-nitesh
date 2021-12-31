@@ -1,10 +1,12 @@
 node_modules/
-/config/default.json
 /config/production.json
+/config/default.json
 
-.DS_Store
+/client/build
+
+.DB_Store
 /client/.env.local
-/client/.env.development.local
+/client/.evn.development.local
 /client/.env.test.local
 /client/.env.production.local
 

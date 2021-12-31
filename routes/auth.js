@@ -2,19 +2,17 @@ const express = require('express');
 const router = express.Router();
 
 // @route     GET api/auth
-// @desc      Get the logged in User
+// @desc      Get the Logged in User
 // @access    Private
-
 router.get('/', (req, res) => {
-  res.send('Get Request Created at Auth.js');
+  res.send('Get the logged in User from auth.js');
 });
 
 // @route     POST api/auth
-// @desc      Log in the User
+// @desc      Verify & Login a User
 // @access    Public
-
 router.post('/', (req, res) => {
-  res.send('Congrats! You have logged in Successfully from auth.js');
+  res.send('Congrats! You have successfully logged in from auth.js');
 });
 
 module.exports = router;

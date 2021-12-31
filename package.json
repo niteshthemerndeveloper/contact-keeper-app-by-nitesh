@@ -1,17 +1,23 @@
 {
-  "name": "contact-keeper-app",
-  "version": "29.12.2021",
-  "description": "Contact Keeper App is to help you manage your contacts effectively anytime and anywhere.",
+  "name": "contact-keeper-server",
+  "version": "31.12.2021",
+  "description": "This is the way to create a RESTFUL Express API from scratch",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nitesh Sharma",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niteshprogrammer/contact-keeper-app-by-nitesh.git"
+  },
+  "author": "Nitesh Sharma (themerndeveloper)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niteshprogrammer/contact-keeper-app-by-nitesh/issues"
+  },
+  "homepage": "https://github.com/niteshprogrammer/contact-keeper-app-by-nitesh#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.1",
     "config": "^3.3.6",
     "express": "^4.17.2",
     "express-validator": "^6.14.0",
