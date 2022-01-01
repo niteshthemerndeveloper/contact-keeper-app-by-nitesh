@@ -94,12 +94,12 @@ router.put(
       let user = await User.findOne({ email });
 
       if (!user) {
-        return res.status(401).json({ msg: 'User does not exist.' });
+        return res.status(404).json({ msg: 'User Not Found' });
       }
       res.status(200).send('An email has been sent to rest the password.');
     } catch (err) {
       console.error(err.message);
-      res.status(500).send('Server Failed to Respond. Please check later.');
+      res.status(500).send('Server Failed to Respond!');
     }
   }
 );
