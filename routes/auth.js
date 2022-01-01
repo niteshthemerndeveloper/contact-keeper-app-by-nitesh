@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 // @desc      Verify & Login a User
 // @access    Public
 router.post('/', (req, res) => {
-  res.send('Congrats! You have successfully logged in from auth.js');
+  res.send('Login a user from auth.js');
 });
 
 module.exports = router;
