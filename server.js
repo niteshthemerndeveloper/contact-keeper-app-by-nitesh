@@ -5,6 +5,9 @@ const connectDB = require('./config/db.js');
 // connect with MongoDB Atlas;
 connectDB();
 
+// Initialize Express Middleware
+app.use(express.json({ extended: false }));
+
 // Define Routes;
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/contacts', require('./routes/contacts.js'));

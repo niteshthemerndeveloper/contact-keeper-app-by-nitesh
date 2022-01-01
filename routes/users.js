@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/User.js');
+const { body, check, validationResult } = require('express-validator');
 
 // @route     POST api/users
 // @desc      Register a User on App
 // @access    Public
-router.post('/', (req, res) => {
-  res.send('Users account has been successfully registered! users.js');
+router.post('/', [check('name').not().isEmpty()], (req, res) => {
+  res.send(req.body);
 });
 
 // @route     PUT api/users/:id
