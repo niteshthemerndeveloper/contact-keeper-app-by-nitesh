@@ -5,12 +5,19 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 const User = require('../models/User.js');
+const middlewareAuth = require('../middleware/middlewareAuth.js');
 
 // @route     GET api/auth
 // @desc      Get the Logged in User
 // @access    Private
-router.get('/', (req, res) => {
-  res.send('Get the logged in User from auth.js');
+router.get('/', middlewareAuth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    res.status(200).json({ user });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Failed to Respond!');
+  }
 });
 
 // @route     POST api/auth

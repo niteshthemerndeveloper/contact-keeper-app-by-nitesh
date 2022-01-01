@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const middlewareAuth = require('../middleware/middlewareAuth.js');
 
 // Contacts will perform CRUD operations;
 
 // @route     GET api/contacts
 // @desc      Get users contacts from server
 // @access    Private
-router.get('/', (req, res) => {
+router.get('/', middlewareAuth, async (req, res) => {
   res.send('Sending users contacts to the Client from contacts.js');
 });
 
